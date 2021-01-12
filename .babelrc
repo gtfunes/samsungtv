@@ -1,10 +1,8 @@
 {
-    "presets": ["es2015", "stage-0"],
-    "plugins": [
-        "syntax-async-functions",
-        "add-module-exports",
-        "transform-class-properties",
-        "transform-runtime",
-        "transform-regenerator"
-    ]
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
 }

@@ -1,4 +1,4 @@
-Samsung Remote Control
+# Samsung Remote Control
 ======================
 
 Node package to control newer Samsung Smart TVs models (2016 and up).
@@ -11,51 +11,45 @@ key commands to it:
 ```js
 import SamsungTV from 'samsungtv'
 
-async function main () {
-    const TV = new SamsungTV('192.168.1.2', '5c:49:7d:cc:89:7b')
-    await TV.connect()
+const TV = new SamsungTV('192.168.1.2', '5c:49:7d:cc:89:7b')
+await TV.connect()
 
-    await TV.sendKey('KEY_VOLUP')
-    await TV.sendKey('KEY_VOLUP')
-    await TV.sendKey('KEY_VOLUP')
-    await TV.sendKey('KEY_VOLDOWN')
-    await TV.sendKey('KEY_VOLDOWN')
-    await TV.sendKey('KEY_VOLDOWN')
+await TV.sendKey('KEY_VOLUP')
+await TV.sendKey('KEY_VOLUP')
+await TV.sendKey('KEY_VOLUP')
+await TV.sendKey('KEY_VOLDOWN')
+await TV.sendKey('KEY_VOLDOWN')
+await TV.sendKey('KEY_VOLDOWN')
 
-    await TV.sendKey('KEY_POWER')
-    return TV.disconnect()
-}
+await TV.sendKey('KEY_POWER')
+await TV.sendKey('KEY_POWER')
+await TV.disconnect()
 
-main().catch(console.log)
 ```
 
 You can also discover Samsung Smart TVs in your network using the `discover` class method. It uses the UPNP
 protocol to lookup services:
 
 ```js
-import SamsungTV from '../build/device'
+import SamsungTV from 'samsungtv'
 
-async function main () {
-    const TVs = SamsungTV.discover()
+const TVs = SamsungTV.discover()
 
-    console.log(`There are ${TVs.length} Samsung Smart TVs connected to this network`)
-    const TV = TVs[0]
-    // specify token
-    // TV.token = 'XXXXXX'
-    const devInfo = await TV.getDeviceInfo();
-    const macaddress = devInfo.device.wifiMac;
-    // save it to further turn on tv
-    // await TV.wol(macaddress);
+console.log(`There are ${TVs.length} Samsung Smart TVs connected to this network`)
+const TV = TVs[0]
+// specify token
+// TV.token = 'XXXXXX'
+const devInfo = await TV.getDeviceInfo();
+const macaddress = devInfo.device.wifiMac;
+// save it to further turn on tv
+// await TV.wol(macaddress);
 
-    await TV.connect()
-    console.log('this is the token to save somewere', TV.token)
+await TV.connect()
+console.log('this is the token to save somewere', TV.token)
 
-    // ...
+// ...
 
-    return TV.disconnect()
-}
-
-main().catch(console.log)
+return TV.disconnect()
 ```
 
 ## Changes in 2018+ models
@@ -66,11 +60,6 @@ The connection is done via SSL and requires confirmation via the tv, after confi
 Compile files:
 
 ```sh
-$ npm run compile
+$ npm run build
 ```
 
-Watch files:
-
-```sh
-$ npm run watch
-```
