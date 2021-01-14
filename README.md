@@ -33,7 +33,7 @@ protocol to lookup services:
 ```js
 import {SamsungTV} from 'samsungtv'
 
-const TVs = SamsungTV.discover()
+const TVs = await SamsungTV.discover()
 
 console.log(`There are ${TVs.length} Samsung Smart TVs connected to this network`)
 const TV = TVs[0]
