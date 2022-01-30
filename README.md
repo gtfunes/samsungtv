@@ -1,5 +1,4 @@
 # Samsung Remote Control
-======================
 
 Node package to control newer Samsung Smart TVs models (2016 and up).
 
@@ -24,7 +23,6 @@ await TV.sendKey('KEY_VOLDOWN')
 await TV.sendKey('KEY_POWER')
 await TV.sendKey('KEY_POWER')
 await TV.disconnect()
-
 ```
 
 You can also discover Samsung Smart TVs in your network using the `discover` class method. It uses the UPNP
@@ -53,6 +51,7 @@ return TV.disconnect()
 ```
 
 ## Changes in 2018+ models
+
 The connection is done via SSL and requires confirmation via the tv, after confirmation is done a token in saved that can be used in further connections.
 
 ## Development
@@ -60,6 +59,5 @@ The connection is done via SSL and requires confirmation via the tv, after confi
 Compile files:
 
 ```sh
-$ npm run build
+npm run build
 ```
-
