@@ -1,6 +1,8 @@
 import readline from 'readline'
 import { on } from 'events'
-import { SamsungTV } from '../build/index.js'
+import samsung from '../build/index.js'
+
+const { SamsungTV } = samsung
 
 const rl = readline.createInterface({
   input: process.stdin,

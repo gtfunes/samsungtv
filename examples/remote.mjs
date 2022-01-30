@@ -1,5 +1,7 @@
 import { on } from 'events'
-import { SamsungTV, KEY_CODES } from '../build/index.js'
+import samsung from '../build/index.js'
+
+const { SamsungTV, KEY_CODES } = samsung
 
 const QUIT = '\u0003'
 
