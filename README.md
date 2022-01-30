@@ -8,7 +8,7 @@ To connect to a Samsung TV you need to know its mac and host address. Once it is
 key commands to it:
 
 ```js
-import {SamsungTV} from 'samsungtv'
+import { SamsungTV, KEY_CODES } from 'samsungtv'
 
 const TV = new SamsungTV('192.168.1.2', '5c:49:7d:cc:89:7b')
 await TV.connect()
@@ -29,7 +29,7 @@ You can also discover Samsung Smart TVs in your network using the `discover` cla
 protocol to lookup services:
 
 ```js
-import {SamsungTV} from 'samsungtv'
+import { SamsungTV } from 'samsungtv'
 
 const TVs = await SamsungTV.discover()
 
@@ -37,10 +37,10 @@ console.log(`There are ${TVs.length} Samsung Smart TVs connected to this network
 const TV = TVs[0]
 // specify token
 // TV.token = 'XXXXXX'
-const devInfo = await TV.getDeviceInfo();
-const macaddress = devInfo.device.wifiMac;
+const devInfo = await TV.getDeviceInfo()
+const macaddress = devInfo.device.wifiMac
 // save it to further turn on tv
-// await TV.wol(macaddress);
+// await TV.wol(macaddress)
 
 await TV.connect()
 console.log('this is the token to save somewere', TV.token)
