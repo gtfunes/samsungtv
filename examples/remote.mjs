@@ -1,5 +1,5 @@
 import { on } from 'events'
-import { SamsungTV } from 'samsungtv'
+import { SamsungTV, KEY_CODES } from '../build/index.js'
 
 const QUIT = '\u0003'
 
@@ -25,34 +25,34 @@ stdin.resume()
 for await (const [key] of on(stdin, 'data')) {
   switch (key) {
     case 'w':
-      await TV.sendKey('KEY_UP')
+      await TV.sendKey(KEY_CODES.KEY_UP)
       break
     case 's':
-      await TV.sendKey('KEY_DOWN')
+      await TV.sendKey(KEY_CODES.KEY_DOWN)
       break
     case 'd':
-      await TV.sendKey('KEY_RIGHT')
+      await TV.sendKey(KEY_CODES.KEY_RIGHT)
       break
     case 'a':
-      await TV.sendKey('KEY_LEFT')
+      await TV.sendKey(KEY_CODES.KEY_LEFT)
       break
     case KEYUP:
-      await TV.sendKey('KEY_VOLUP')
+      await TV.sendKey(KEY_CODES.KEY_VOLUP)
       break
     case KEYDOWN:
-      await TV.sendKey('KEY_VOLDOWN')
+      await TV.sendKey(KEY_CODES.KEY_VOLDOWN)
       break
     case SPACE:
-      await TV.sendKey('KEY_MENU')
+      await TV.sendKey(KEY_CODES.KEY_MENU)
       break
     case TAB:
-      await TV.sendKey('KEY_SOURCE')
+      await TV.sendKey(KEY_CODES.KEY_SOURCE)
       break
     case ESCAPE:
-      await TV.sendKey('KEY_POWER')
+      await TV.sendKey(KEY_CODES.KEY_POWER)
       break
     case ENTER:
-      await TV.sendKey('KEY_ENTER')
+      await TV.sendKey(KEY_CODES.KEY_ENTER)
       break
     case QUIT:
       process.exit(0)
