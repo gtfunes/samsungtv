@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "description": "Node.JS module to control newer models of Samsung Smart TVs (2016 and up)",
   "main": "./build/device.js",
-  "exports": {
-    "require": "./build/device.js",
-    "import": "./lib/device.mjs"
-  },
+  "files": ["build"],
   "scripts": {
     "build": "babel ./lib --out-dir ./build",
     "clean": "(rm -r ./build 2>/dev/null || true)",
