@@ -1,4 +1,4 @@
-import {SamsungTV} from 'samsungtv'
+import { SamsungTV } from 'samsungtv'
 
 const TV = new SamsungTV('192.168.1.94', 'c0:97:27:1f:1e:c2')
 await TV.connect()
