@@ -58,5 +58,7 @@ for await (const [key] of on(stdin, 'data')) {
       break
     case QUIT:
       process.exit(0)
+    default:
+      break
   }
 }
