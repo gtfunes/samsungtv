@@ -26,7 +26,14 @@ await TV.disconnect()
 ```
 
 You can also discover Samsung Smart TVs in your network using the `discover` class method. It uses the UPNP
-protocol to lookup services:
+protocol to lookup services.
+
+Discovery is opt-in: `node-ssdp` is loaded lazily and is not installed with this package, so install it
+alongside if you need `discover()` (calling it without `node-ssdp` present throws an error explaining this):
+
+```sh
+npm install node-ssdp
+```
 
 ```js
 import { SamsungTV } from 'samsungtv'
